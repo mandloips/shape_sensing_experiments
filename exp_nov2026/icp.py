@@ -3,7 +3,7 @@
 icp.py (exp_nov2026)
 
 Implements the Iterative Closest Point (ICP) algorithm (SENSORS_2022 reference,
-Rusinkiewicz & Levoy 2001) to align the reconstructed catheter shape with the
+Rusinkiewicz & Levoy 2001) to align the reconstructed guidewire shape with the
 CAD centerline ground truth of the helical rig.
 
 Inputs:

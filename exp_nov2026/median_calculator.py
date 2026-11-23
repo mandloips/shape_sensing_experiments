@@ -5,7 +5,7 @@ median_calculator.py (exp_nov2026)
 Calculates the median position (Tx, Ty, Tz) and Markley average quaternion
 (Q0, Qx, Qy, Qz) for each sensor from experimental NDI Aurora tracking data.
 
-Automatically identifies the physical order of sensors along the catheter:
+Automatically identifies the physical order of sensors along the guidewire:
   - Finds the ~60 mm pair (Sensor 1 Tip and Sensor 2 Middle).
   - Identifies the Base sensor (Sensor 3).
   - Distinguishes Tip (S1) from Middle (S2) by distance to Base:
@@ -53,7 +53,7 @@ def markley_average_quaternion(quaternions):
     return avg_quat
 
 
-def order_sensors_along_catheter(sensor_dict):
+def order_sensors_along_guidewire(sensor_dict):
     """
     Robust geometric identification of sensors from Tip to Base:
     1. The two sensors with the shortest distance (~60 mm) are Tip and Middle.
@@ -160,7 +160,7 @@ def process_file(input_path, output_path=None):
             "samples": len(positions)
         }
 
-    sensors = order_sensors_along_catheter(sensor_dict)
+    sensors = order_sensors_along_guidewire(sensor_dict)
 
     os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
     with open(output_path, "w", newline="") as f:

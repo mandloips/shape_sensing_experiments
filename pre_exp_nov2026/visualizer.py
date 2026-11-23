@@ -2,7 +2,7 @@
 """
 visualizer.py
 
-Visualizes the ICP-aligned reconstructed catheter shape against the CAD ground truth
+Visualizes the ICP-aligned reconstructed guidewire shape against the CAD ground truth
 on the same 3D coordinate axes, following the style of SENSORS_2022 Figure 3.
 Highlights all 3 embedded sensors (Sensor 1, Sensor 2, Sensor 3).
 
@@ -104,7 +104,7 @@ def plot_shapes(sensed_csv, gt_csv, output_img=None, show_plot=False):
     sensed_pts = load_point_csv(sensed_csv)
     gt_pts = load_point_csv(gt_csv)
 
-    print(f"\nVisualizing Catheter Shape Comparison:")
+    print(f"\nVisualizing Guidewire Shape Comparison:")
     print(f"  Sensed shape (green): {sensed_csv} ({len(sensed_pts)} points)")
     print(f"  Ground truth (red):   {gt_csv} ({len(gt_pts)} points)")
 
@@ -146,7 +146,7 @@ def plot_shapes(sensed_csv, gt_csv, output_img=None, show_plot=False):
         alpha=0.95
     )
 
-    # Mark embedded sensors along the catheter
+    # Mark embedded sensors along the guidewire
     ax3d.scatter(
         s1_pos[0], s1_pos[1], s1_pos[2],
         color="blue", marker="o", s=70, zorder=6,
@@ -225,7 +225,7 @@ def plot_shapes(sensed_csv, gt_csv, output_img=None, show_plot=False):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Visualize ICP-aligned sensed catheter shape and ground truth."
+        description="Visualize ICP-aligned sensed guidewire shape and ground truth."
     )
     parser.add_argument(
         "--sensed",

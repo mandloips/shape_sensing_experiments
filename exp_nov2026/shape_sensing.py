@@ -2,7 +2,7 @@
 """
 shape_sensing.py (exp_nov2026)
 
-Reconstructs the 3D catheter shape using piecewise cubic Bezier curves fitted
+Reconstructs the 3D guidewire shape using piecewise cubic Bezier curves fitted
 between consecutive EMT sensors, taking sensor spacings and sensor poses as inputs.
 Reference: SENSORS_2022 paper and curve_fitting implementation.
 
@@ -127,7 +127,7 @@ def optimize_segment(p0, p3, t_i, t_next, l_straight, x0=None):
         return x, best_val, True
 
 
-def reconstruct_catheter_shape(sensor_spacing_path, median_path, total_points=500, output_path=None):
+def reconstruct_guidewire_shape(sensor_spacing_path, median_path, total_points=500, output_path=None):
     if not os.path.isfile(sensor_spacing_path):
         raise FileNotFoundError(f"Sensor spacing file not found: {sensor_spacing_path}")
     if not os.path.isfile(median_path):
@@ -252,7 +252,7 @@ def reconstruct_catheter_shape(sensor_spacing_path, median_path, total_points=50
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Reconstruct 3D catheter shape with equidistant points in exp_nov2026."
+        description="Reconstruct 3D guidewire shape with equidistant points in exp_nov2026."
     )
     parser.add_argument(
         "--spacing",
@@ -309,7 +309,7 @@ def main():
         sys.exit(1)
 
     for mf in median_files:
-        reconstruct_catheter_shape(
+        reconstruct_guidewire_shape(
             sensor_spacing_path=spacing_file,
             median_path=mf,
             total_points=args.points,

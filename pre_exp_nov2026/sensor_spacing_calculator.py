@@ -74,7 +74,7 @@ def compute_sensor_spacing(input_csv, output_csv=None):
               f"Sensor {s_to['sensor_id']} ({s_to['port']}) = {dist:.4f} mm")
 
     total_len = sum(s["spacing_mm"] for s in segments)
-    print(f"Total distance along catheter: {total_len:.4f} mm")
+    print(f"Total distance along guidewire: {total_len:.4f} mm")
     print("=" * 60)
 
     # Write sensor_spacing.csv

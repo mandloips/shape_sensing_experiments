@@ -2,7 +2,7 @@
 """
 shape_sensing.py
 
-Reconstructs the 3D catheter shape using piecewise cubic Bezier curves fitted
+Reconstructs the 3D guidewire shape using piecewise cubic Bezier curves fitted
 between consecutive EMT sensors, taking sensor spacings and sensor poses as inputs.
 Reference: SENSORS_2022 paper and curve_fitting implementation.
 
@@ -124,7 +124,7 @@ def optimize_segment(p0, p3, t_i, t_next, l_straight, x0=None):
         return x, best_val, True
 
 
-def reconstruct_catheter_shape(sensor_spacing_path, helical_median_path, total_points=500, output_path=None):
+def reconstruct_guidewire_shape(sensor_spacing_path, helical_median_path, total_points=500, output_path=None):
     if not os.path.isfile(sensor_spacing_path):
         raise FileNotFoundError(f"Sensor spacing file not found: {sensor_spacing_path}")
     if not os.path.isfile(helical_median_path):
@@ -257,7 +257,7 @@ def reconstruct_catheter_shape(sensor_spacing_path, helical_median_path, total_p
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Reconstruct 3D catheter shape from sensor spacing and helical rig test median poses."
+        description="Reconstruct 3D guidewire shape from sensor spacing and helical rig test median poses."
     )
     parser.add_argument(
         "--spacing",
@@ -321,7 +321,7 @@ def main():
         print("Error: helical_rig_test_median.csv not found. Please run median_calculator.py first.")
         sys.exit(1)
 
-    reconstruct_catheter_shape(
+    reconstruct_guidewire_shape(
         sensor_spacing_path=spacing_file,
         helical_median_path=median_file,
         total_points=args.points,

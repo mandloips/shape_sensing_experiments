@@ -12,7 +12,7 @@ Generates comparative visualization plots for each shape:
 For each shape, creates a comprehensive 3-panel figure:
   - Panel 1: 3D Comparison View (Ground Truth vs Rigid vs Gelatin)
   - Panel 2: Top-Down Projection (X-Y Plane)
-  - Panel 3: Arc-Length Error Profile along Catheter Length (0 to 302 mm)
+  - Panel 3: Arc-Length Error Profile along Guidewire Length (0 to 302 mm)
 """
 
 import sys
@@ -196,7 +196,7 @@ def plot_shape_comparison(shape_num, data_dir, out_dir=None):
     ax2d.grid(True, linestyle="--", alpha=0.4)
 
     # =========================================================================
-    # Subplot 3: Arc-Length Error Profile along Catheter
+    # Subplot 3: Arc-Length Error Profile along Guidewire
     # =========================================================================
     ax_err = fig.add_subplot(1, 3, 3)
     s_eval = np.linspace(0.0, cum_s_r[-1], len(err_rigid))
@@ -217,9 +217,9 @@ def plot_shape_comparison(shape_num, data_dir, out_dir=None):
     ax_err.text(62, max(err_rigid.max(), err_gel.max()) * 0.9, "S2 (60 mm)", fontsize=8.5, color="gray", fontweight="bold")
     ax_err.text(cum_s_r[-1] - 35, max(err_rigid.max(), err_gel.max()) * 0.9, "S3 (Base)", fontsize=8.5, color="gray", fontweight="bold")
 
-    ax_err.set_xlabel("Arc Length along Catheter s (mm)", fontsize=10)
+    ax_err.set_xlabel("Arc Length along Guidewire s (mm)", fontsize=10)
     ax_err.set_ylabel("Reconstruction Error (mm)", fontsize=10)
-    ax_err.set_title(f"Error Distribution along Catheter", fontsize=12, fontweight="bold")
+    ax_err.set_title(f"Error Distribution along Guidewire", fontsize=12, fontweight="bold")
     ax_err.legend(loc="upper right", fontsize=8.5, framealpha=0.9)
     ax_err.grid(True, linestyle="--", alpha=0.4)
     ax_err.set_ylim(bottom=0.0)
