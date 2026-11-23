@@ -1,12 +1,12 @@
 # Electromagnetic (EMT) 3D Shape Sensing & Experimental Verification
 
-This repository contains the complete data processing, 3D shape reconstruction, and ICP ground-truth verification pipeline for flexible guidewire shape sensing using embedded Electromagnetic Tracking (EMT) sensors.
+This repository contains the complete data processing, 3D shape reconstruction, and ICP ground-truth verification pipeline for shape sensing using embedded Electromagnetic Tracking (EMT) sensors.
 
 ---
 
 ## 🔬 Pipeline Overview
 
-The pipeline implements continuous 3D guidewire curve reconstruction from discrete 6-DoF EMT sensor readings:
+The pipeline implements continuous 3D curve reconstruction from discrete 6-DoF EMT sensor readings:
 
 1. **Temporal Filtering (`median_calculator.py`):**
    - Extracts spatial median position $(T_x, T_y, T_z)$ over steady-state acquisition windows.
