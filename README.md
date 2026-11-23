@@ -38,7 +38,6 @@ All reconstructed shapes are evaluated with 500 equidistant points against CAD g
 
 | Experiment / Configuration | Mean ± Std (mm) | Median (mm) | Min (mm) | Max (mm) | Relative Error (% of 302 mm) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Pre-Exp Helical Rig** | **$1.31 \pm 0.88$** | 1.20 | 0.18 | 3.29 | 0.43% |
 | **Shape 1** | **$1.10 \pm 0.48$** | 1.18 | 0.23 | 2.53 | 0.36% |
 | **Shape 1 (Gelatin)** | **$0.89 \pm 0.52$** | 0.86 | 0.10 | 4.24 | 0.29% |
 | **Shape 2** | **$1.74 \pm 0.71$** | 1.81 | 0.38 | 3.59 | 0.58% |
