@@ -6,7 +6,7 @@ This repository contains the complete data processing, 3D shape reconstruction, 
 
 ## 🔬 Pipeline Overview
 
-The pipeline implements continuous 3D curve reconstruction from discrete 6-DoF EMT sensor readings:
+The pipeline implements continuous 3D curve reconstruction from discrete 5-DoF EMT sensor readings:
 
 1. **Temporal Filtering (`median_calculator.py`):**
    - Extracts spatial median position $(T_x, T_y, T_z)$ over steady-state acquisition windows.
