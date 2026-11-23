@@ -34,7 +34,7 @@ The pipeline implements continuous 3D catheter curve reconstruction from discret
 
 ## 📊 Experimental Results
 
-All reconstructed shapes are evaluated with 500 equidistant points against CAD ground truth:
+All reconstructed shapes are evaluated with 500 equidistant points against CAD ground truth (3000 equidistant points):
 
 | Experiment / Configuration | Mean ± Std (mm) | Median (mm) | Min (mm) | Max (mm) | Relative Error (% of 302 mm) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
