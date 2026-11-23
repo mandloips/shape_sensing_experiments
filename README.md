@@ -49,6 +49,10 @@ All reconstructed shapes are evaluated with 500 equidistant points against CAD g
 | **Shape 5** | **$2.43 \pm 0.95$** | 2.42 | 0.75 | 5.30 | 0.80% |
 | **Shape 5 (Gelatin)** | **$2.50 \pm 0.96$** | 2.48 | 0.80 | 5.82 | 0.83% |
 
+Visualization:
+
+![All Shapes Comparison](exp_nov2026/data/all_shapes_comparison.png)
+
 ---
 
 ## 📁 Repository Structure
